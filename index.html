@@ -83,6 +83,25 @@
     
     .contact-info { margin-top: 20px; line-height: 1.6; }
     .contact-info a { color: orange; text-decoration: none; font-weight: bold; }
+
+    /* --- RESPONSIVE ADJUSTMENTS (SMALL SCREENS) --- */
+    @media (max-width: 768px) {
+        nav { flex-direction: column; padding: 10px; position: relative; }
+        nav div { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+        nav a { margin: 5px 8px; font-size: 14px; }
+        
+        .hero h1 { font-size: 32px; }
+        .overlay { padding: 30px 15px; width: 90%; }
+        
+        section { padding: 40px 20px; }
+        
+        .card { width: 100%; max-width: 320px; }
+        
+        /* Make pricing table scrollable on small screens */
+        .pricing-table { display: block; overflow-x: auto; white-space: nowrap; }
+        
+        input, textarea, select { max-width: 100%; }
+    }
 </style>
 </head>
 
