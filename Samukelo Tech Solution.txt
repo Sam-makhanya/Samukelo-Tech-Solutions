@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samukelo Tech Solutions</title>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('Samukelo_Tech.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.7);
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero p {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 40px;
+    text-align: center;
+    background: #0d1117;
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.chart {
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(to top, orange, transparent);
+    border-radius: 10px;
+}
+
+/* CONTACT */
+.contact a {
+    color: orange;
+    text-decoration: none;
+}
+
+/* SOCIAL */
+.social i {
+    font-size: 25px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h3>Samukelo Tech Solutions</h3>
+    <div>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#data">Data Analysis</a>
+        <a href="#contact">Contact</a>
+        <a href="#order">Order</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="overlay">
+        <h1>Samukelo Tech Solutions</h1>
+        <p>Modern • Fast • Professional Websites</p>
+        <button class="btn">Order Your Website</button>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>We build modern, responsive websites for businesses and individuals. 
+    Our goal is to help you grow your business online with professional digital solutions.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Business Websites</h3>
+            <p>Professional websites for your company.</p>
+        </div>
+        <div class="card">
+            <h3>Portfolio Websites</h3>
+            <p>Showcase your work beautifully.</p>
+        </div>
+        <div class="card">
+            <h3>Custom Design</h3>
+            <p>Unique designs tailored to your needs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DATA ANALYSIS -->
+<section id="data">
+    <h2>Data Analysis for Your Business</h2>
+    <p>We help businesses understand their data using dashboards and insights.</p>
+
+    <div class="dashboard">
+        <div class="chart"></div>
+        <div class="chart"></div>
+        <div class="chart"></div>
+    </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+    <h2>Order Your Website</h2>
+    <p>Contact us to get your website started today.</p>
+    <button class="btn">Start Now</button>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Pretoria, Hitherly Black Tern Street</p>
+    <p><a href="https://maps.app.goo.gl/1aH9AJs2s4H8H1hq8?g_st=aw" target="_blank">Get Directions</a></p>
+
+    <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100008039777912" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/samza085?igsh=MWJuaWthMjhteWI0ag==" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@samza771" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Samukelo Tech Solutions</p>
+</footer>
+
+</body>
+</html>
