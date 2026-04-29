@@ -12,20 +12,39 @@
     body { margin: 0; font-family: 'Poppins', sans-serif; color: #fff; background: #0d1117; scroll-behavior: smooth; }
 
     /* NAVBAR */
-    nav { display: flex; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.85); position: fixed; width: 100%; z-index: 1000; box-sizing: border-box; align-items: center; }
+    nav { 
+        display: flex; 
+        justify-content: space-between; 
+        padding: 15px 40px; 
+        background: rgba(0,0,0,0.95); 
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%; 
+        z-index: 1000; 
+        box-sizing: border-box; 
+        align-items: center; 
+        border-bottom: 1px solid #30363d;
+    }
     .nav-brand { display: flex; align-items: center; gap: 10px; }
     .nav-brand img { height: 35px; width: 35px; border-radius: 50%; object-fit: cover; border: 1px solid orange; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; }
+    
+    .nav-links { display: flex; align-items: center; }
+    .nav-links a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+    .nav-links a:hover { color: orange; }
+
+    /* HAMBURGER MENU (HIDDEN ON DESKTOP) */
+    .menu-toggle { display: none; font-size: 24px; color: white; cursor: pointer; }
 
     /* HERO */
-    .hero { height: 100vh; background: url('Samukelo_Tech.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero { height: 100vh; background: url('Samukelo_Tech.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 60px; }
     .overlay { background: rgba(0,0,0,0.7); padding: 50px; border-radius: 10px; }
     .hero h1 { font-size: 50px; }
     .btn { margin-top: 20px; padding: 12px 25px; background: orange; border: none; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; text-decoration: none; display: inline-block; }
     .btn:hover { background: #e69500; }
 
     /* SECTIONS */
-    section { padding: 80px 40px; text-align: center; }
+    section { padding: 100px 40px 60px; text-align: center; }
 
     /* LAYOUT GRIDS */
     .services, .portfolio-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -54,16 +73,28 @@
     /* FOOTER */
     footer { background: black; padding: 20px; text-align: center; }
     .preview-img { width: 100%; margin-top: 10px; border-radius: 10px; display: none; border: 2px solid orange; }
-    .contact-info { margin-top: 20px; line-height: 1.6; }
-    .contact-info a { color: orange; text-decoration: none; font-weight: bold; }
-
-    @media (max-width: 768px) {
-        nav { flex-direction: column; padding: 10px; position: relative; }
-        nav div { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
-        nav a { margin: 5px 8px; font-size: 14px; }
+    
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+        .menu-toggle { display: block; }
+        .nav-links { 
+            display: none; 
+            flex-direction: column; 
+            position: absolute; 
+            top: 65px; 
+            left: 0; 
+            width: 100%; 
+            background: rgba(0,0,0,0.95); 
+            padding: 20px 0;
+            border-bottom: 1px solid orange;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links a { margin: 15px 0; font-size: 18px; }
+        
         .hero h1 { font-size: 32px; }
         .card { width: 100%; max-width: 320px; }
         .chart { width: 90%; }
+        section { padding: 80px 20px 40px; }
     }
 </style>
 </head>
@@ -75,13 +106,16 @@
         <img src="Samukelo_Tech.png" alt="Logo">
         <h3 style="margin:0;">Samukelo Tech Solutions</h3>
     </div>
-    <div>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#order">Order</a>
-        <a href="#contact">Contact</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a href="#" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+        <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+        <a href="#order" onclick="toggleMenu()">Order</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
     </div>
 </nav>
 
@@ -269,6 +303,14 @@
 <footer><p>© 2026 Samukelo Tech Solutions</p></footer>
 
 <script>
+// Toggle Mobile Menu
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    if (window.innerWidth <= 900) {
+        navLinks.classList.toggle("active");
+    }
+}
+
 let itemIndex = 0;
 let uploadedImages = {};
 const IMGBB_API_KEY = "e05a0a1fe3db90767929d029df02b9b7";
