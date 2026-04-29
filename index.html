@@ -6,11 +6,10 @@
 <title>Samukelo Tech Solutions</title>
 
 <link rel="icon" type="image/png" href="Samukelo_Tech.png">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-    body { margin: 0; font-family: 'Poppins', sans-serif; color: #fff; background: #0d1117; }
+    body { margin: 0; font-family: 'Poppins', sans-serif; color: #fff; background: #0d1117; scroll-behavior: smooth; }
 
     /* NAVBAR */
     nav { display: flex; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.85); position: fixed; width: 100%; z-index: 1000; box-sizing: border-box; align-items: center; }
@@ -22,56 +21,31 @@
     .hero { height: 100vh; background: url('Samukelo_Tech.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
     .overlay { background: rgba(0,0,0,0.7); padding: 50px; border-radius: 10px; }
     .hero h1 { font-size: 50px; }
-    .btn { margin-top: 20px; padding: 12px 25px; background: orange; border: none; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; }
+    .btn { margin-top: 20px; padding: 12px 25px; background: orange; border: none; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; text-decoration: none; display: inline-block; }
+    .btn:hover { background: #e69500; }
 
     /* SECTIONS */
     section { padding: 80px 40px; text-align: center; }
 
-    /* SERVICES & DASHBOARD */
-    .services, .dashboard { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .card { background: #161b22; padding: 20px; border-radius: 10px; width: 280px; margin: 10px auto; }
+    /* LAYOUT GRIDS */
+    .services, .portfolio-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .card { background: #161b22; padding: 25px; border-radius: 10px; width: 300px; margin: 10px; border: 1px solid transparent; transition: 0.3s; box-sizing: border-box; }
+    
+    /* PRICING SPECIFIC */
+    .pricing-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; }
+    .pricing-card:hover { border-color: orange; transform: translateY(-10px); }
 
-    /* PRICING TABLE */
-    .pricing-table {
-        width: 100%;
-        max-width: 800px;
-        margin: 30px auto;
-        border-collapse: collapse;
-        background: #161b22;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    .pricing-table th, .pricing-table td {
-        padding: 15px;
-        border: 1px solid #30363d;
-        text-align: left;
-    }
-    .pricing-table th { background: orange; color: #000; }
+    /* PORTFOLIO SPECIFIC */
+    .portfolio-card:hover { border-color: orange; transform: translateY(-5px); }
+    .portfolio-card h3 { color: orange; margin-bottom: 10px; }
 
     /* DASHBOARD CHARTS */
-    .chart { 
-        width: 250px; 
-        height: 180px; 
-        border-radius: 10px; 
-        border: 2px solid #30363d;
-        background-size: cover;
-        background-position: center;
-        transition: transform 0.3s;
-    }
+    .dashboard { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .chart { width: 250px; height: 180px; border-radius: 10px; border: 2px solid #30363d; background-size: cover; background-position: center; transition: transform 0.3s; }
     .chart:hover { transform: scale(1.05); border-color: orange; }
 
-    /* DEPOSIT NOTICE (NB) */
-    .notice-box {
-        background: rgba(255, 165, 0, 0.1);
-        border: 1px solid orange;
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 600px;
-        margin: 20px auto;
-        color: orange;
-        font-weight: bold;
-        line-height: 1.5;
-    }
+    /* DEPOSIT NOTICE */
+    .notice-box { background: rgba(255, 165, 0, 0.1); border: 1px solid orange; padding: 20px; border-radius: 8px; max-width: 600px; margin: 20px auto; color: orange; font-weight: bold; line-height: 1.5; }
 
     /* INPUTS */
     input, textarea, select { width: 100%; max-width: 300px; padding: 12px; margin: 8px 0; border-radius: 5px; border: none; outline: none; color: #000; }
@@ -80,27 +54,15 @@
     /* FOOTER */
     footer { background: black; padding: 20px; text-align: center; }
     .preview-img { width: 100%; margin-top: 10px; border-radius: 10px; display: none; border: 2px solid orange; }
-    
     .contact-info { margin-top: 20px; line-height: 1.6; }
     .contact-info a { color: orange; text-decoration: none; font-weight: bold; }
 
-    /* --- RESPONSIVE ADJUSTMENTS (SMALL SCREENS) --- */
     @media (max-width: 768px) {
         nav { flex-direction: column; padding: 10px; position: relative; }
         nav div { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
         nav a { margin: 5px 8px; font-size: 14px; }
-        
         .hero h1 { font-size: 32px; }
-        .overlay { padding: 30px 15px; width: 90%; }
-        
-        section { padding: 40px 20px; }
-        
         .card { width: 100%; max-width: 320px; }
-        
-        /* Make pricing table scrollable on small screens */
-        .pricing-table { display: block; overflow-x: auto; white-space: nowrap; }
-        
-        input, textarea, select { max-width: 100%; }
     }
 </style>
 </head>
@@ -115,8 +77,8 @@
     <div>
         <a href="#">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#data">Data Analysis</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
         <a href="#order">Order</a>
         <a href="#contact">Contact</a>
     </div>
@@ -126,7 +88,7 @@
     <div class="overlay">
         <h1>Samukelo Tech Solutions</h1>
         <p>Modern • Fast • Professional Websites</p>
-        <button class="btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Order Your Website</button>
+        <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Your Website</button>
     </div>
 </div>
 
@@ -136,61 +98,123 @@
     <p>Beyond web development, we empower businesses through **Data Analysis and Business Intelligence (BI)**. We transform raw data into actionable insights using advanced tools like SQL and Power BI.</p>
 </section>
 
-<section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Web Development</h3>
-            <p>High-performance business and portfolio websites designed for speed and responsiveness.</p>
+<section id="portfolio" style="background: #090c10;">
+    <h2>Our Previous Work</h2>
+    <p>Projects successfully delivered for our clients.</p>
+    <div class="portfolio-grid">
+        <div class="card portfolio-card">
+            <h3>My Personal Portfolio</h3>
+            <p>Official professional portfolio and technical resume site.</p>
+            <a href="https://sam-makhanya.github.io/my-portfolio/" target="_blank" class="btn" style="padding: 8px 15px; font-size: 12px;">View Project</a>
         </div>
-        <div class="card">
-            <h3>Business Intelligence</h3>
-            <p>Automated reporting and visual dashboards that turn complex data into clear business insights.</p>
+        <div class="card portfolio-card">
+            <h3>Pat Thee Baker</h3>
+            <p>Custom Sweet Treats E-commerce style site.</p>
+            <a href="https://sam-makhanya.github.io/-PatTheeBaker-Sweet-Treats/" target="_blank" class="btn" style="padding: 8px 15px; font-size: 12px;">View Project</a>
         </div>
-        <div class="card">
-            <h3>Custom Technical Solutions</h3>
-            <p>Tailored digital tools designed to solve specific operational challenges for your business.</p>
+        <div class="card portfolio-card">
+            <h3>Precious Beauty</h3>
+            <p>Elegant beauty and skincare landing page.</p>
+            <a href="https://sam-makhanya.github.io/PRECIOUS-BEAUTY/" target="_blank" class="btn" style="padding: 8px 15px; font-size: 12px;">View Project</a>
+        </div>
+        <div class="card portfolio-card">
+            <h3>Gcinile's Salon</h3>
+            <p>Professional hair salon booking interface.</p>
+            <a href="https://sam-makhanya.github.io/gcinile-s-salon/" target="_blank" class="btn" style="padding: 8px 15px; font-size: 12px;">View Project</a>
+        </div>
+        <div class="card portfolio-card">
+            <h3>Mbali Hair Salon</h3>
+            <p>Modern hair and style service showcase.</p>
+            <a href="https://sam-makhanya.github.io/mbali-hair-salon/" target="_blank" class="btn" style="padding: 8px 15px; font-size: 12px;">View Project</a>
+        </div>
+        <div class="card portfolio-card">
+            <h3>Madrop's Make-Up</h3>
+            <p>Artistic portfolio and makeup gallery.</p>
+            <a href="https://sam-makhanya.github.io/Madrop-s-Thee-Make-Up-Artists/#gallery" target="_blank" class="btn" style="padding: 8px 15px; font-size: 12px;">View Project</a>
         </div>
     </div>
 </section>
 
-<section id="data">
-    <h2>Data Analysis & Business Intelligence</h2>
-    <p>Unlock the hidden potential of your business data with custom interactive dashboards.</p>
+<section id="pricing">
+    <h2>Packages & Pricing</h2>
     
-    <div class="dashboard">
-        <div class="chart" style="background-image: url('Dashboard_1.jpg');"></div>
-        <div class="chart" style="background-image: url('Dashboard_2.jpg');"></div>
-        <div class="chart" style="background-image: url('Dashboard_3.jpg');"></div>
-        <div class="chart" style="background-image: url('Dashboard_4.jpg');"></div>
+    <h3 style="color: orange; margin-top: 40px;">🌐 Web Development</h3>
+    <div class="services">
+        <div class="card pricing-card">
+            <h3>Basic Site</h3>
+            <h2 style="color: orange;">R1,500</h2>
+            <p>3 - 5 Days Delivery</p>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
+                <li>Single Page Design</li>
+                <li>Mobile Responsive</li>
+                <li>Contact Form</li>
+            </ul>
+            <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Site</button>
+        </div>
+        <div class="card pricing-card" style="border: 1px solid orange;">
+            <h3>Business Site</h3>
+            <h2 style="color: orange;">R2,500</h2>
+            <p>5 - 7 Days Delivery</p>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
+                <li>Up to 5 Pages</li>
+                <li>SEO Optimization</li>
+                <li>Social Media Integration</li>
+            </ul>
+            <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Site</button>
+        </div>
+        <div class="card pricing-card">
+            <h3>Advanced Site</h3>
+            <h2 style="color: orange;">R3,500</h2>
+            <p>7 - 14 Days Delivery</p>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
+                <li>E-commerce / Database</li>
+                <li>Custom Animations</li>
+                <li>Admin Dashboard</li>
+            </ul>
+            <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Site</button>
+        </div>
     </div>
 
-    <h3>Data Analysis Pricing</h3>
-    <table class="pricing-table">
-        <thead>
-            <tr>
-                <th>Service Level</th>
-                <th>Price</th>
-                <th>Features</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Basic Dashboard</td><td>R850</td><td>1 Source (Excel), 4 Charts, Static Report</td></tr>
-            <tr><td>Business Dashboard</td><td>R1,800</td><td>SQL/Excel, Interactive Filters, Trend Analysis</td></tr>
-            <tr><td>Advanced BI Suite</td><td>R3,500+</td><td>Multiple Sources, Automated Refresh, Complex DAX</td></tr>
-        </tbody>
-    </table>
+    <h3 style="color: orange; margin-top: 60px;">📊 Data Analysis & BI</h3>
+    <div class="services">
+        <div class="card pricing-card">
+            <h3>Basic Dashboard</h3>
+            <h2 style="color: orange;">R850</h2>
+            <p>Excel / CSV Data</p>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
+                <li>1 Data Source</li>
+                <li>4 Interactive Charts</li>
+                <li>Static PDF Report</li>
+            </ul>
+            <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Data</button>
+        </div>
+        <div class="card pricing-card" style="border: 1px solid orange;">
+            <h3>Business BI</h3>
+            <h2 style="color: orange;">R1,800</h2>
+            <p>SQL / Live Data</p>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
+                <li>Multiple Sources</li>
+                <li>Interactive Slicers</li>
+                <li>Trend Forecasting</li>
+            </ul>
+            <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Data</button>
+        </div>
+        <div class="card pricing-card">
+            <h3>Advanced Suite</h3>
+            <h2 style="color: orange;">R3,500+</h2>
+            <p>Enterprise Solutions</p>
+            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
+                <li>Automated Refresh</li>
+                <li>Complex DAX Modeling</li>
+                <li>Full Business Audit</li>
+            </ul>
+            <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Data</button>
+        </div>
+    </div>
 </section>
 
 <section id="order">
     <h2>Order Your Project</h2>
-    <p>Choose a package and send your request</p>
-    <div class="services">
-        <div class="card"><h3>Basic Site</h3><p>R1500</p><p>3 - 5 Days</p></div>
-        <div class="card"><h3>Business Site</h3><p>R2500</p><p>5 - 7 Days</p></div>
-        <div class="card"><h3>Advanced Site</h3><p>R3500</p><p>7 - 14 Days</p></div>
-    </div>
-
     <div class="notice-box">
         NB: To start a project, we require a 25% UPFRONT deposit of the package you ordered. <br>
         Please note that this deposit is NON-REFUNDABLE in the event that you cancel your order.
@@ -224,12 +248,10 @@
     <div class="contact-info">
         <p><i class="fas fa-map-marker-alt" style="color:orange;"></i> Hatherley 331-Jr, Black Tern Street, Pretoria, 0122</p>
         <p><i class="fab fa-whatsapp" style="color:green;"></i> WhatsApp: <a href="https://wa.me/27637571971" target="_blank">063 757 1971</a></p>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Black+Tern+Street+Hatherley+Pretoria+0122" target="_blank">Get Directions</a></p>
     </div>
-
     <div class="social">
-        <a href="https://www.facebook.com/profile.php?id=100008039777912" target="_blank" style="color:white; font-size: 25px; margin: 10px;"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/samza085" target="_blank" style="color:white; font-size: 25px; margin: 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank" style="color:white; font-size: 25px; margin: 10px;"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/samza085" target="_blank" style="color:white; font-size: 25px; margin: 10px;"><i class="fab fa-instagram"></i></a>
         <a href="https://tiktok.com/@samza771" target="_blank" style="color:white; font-size: 25px; margin: 10px;"><i class="fab fa-tiktok"></i></a>
     </div>
 </section>
