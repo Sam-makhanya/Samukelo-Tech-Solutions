@@ -4,13 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samukelo Tech Solutions</title>
-
 <link rel="icon" type="image/png" href="ST LOGO.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
     body { margin: 0; font-family: 'Poppins', sans-serif; color: #fff; background: #0d1117; scroll-behavior: smooth; }
-
     /* NAVBAR */
     nav { 
         display: flex; 
@@ -32,20 +29,16 @@
     .nav-links { display: flex; align-items: center; }
     .nav-links a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
     .nav-links a:hover { color: orange; }
-
     /* HAMBURGER MENU (HIDDEN ON DESKTOP) */
     .menu-toggle { display: none; font-size: 24px; color: white; cursor: pointer; }
-
     /* HERO */
     .hero { height: 100vh; background: url('Samukelo_Tech.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 60px; }
     .overlay { background: rgba(0,0,0,0.7); padding: 50px; border-radius: 10px; }
     .hero h1 { font-size: 50px; }
     .btn { margin-top: 20px; padding: 12px 25px; background: orange; border: none; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; text-decoration: none; display: inline-block; }
     .btn:hover { background: #e69500; }
-
     /* SECTIONS */
     section { padding: 100px 40px 60px; text-align: center; }
-
     /* LAYOUT GRIDS */
     .services, .portfolio-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
     .card { background: #161b22; padding: 25px; border-radius: 10px; width: 300px; margin: 10px; border: 1px solid transparent; transition: 0.3s; box-sizing: border-box; }
@@ -53,23 +46,18 @@
     /* PRICING SPECIFIC */
     .pricing-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; }
     .pricing-card:hover { border-color: orange; transform: translateY(-10px); }
-
     /* PORTFOLIO SPECIFIC */
     .portfolio-card:hover { border-color: orange; transform: translateY(-5px); }
     .portfolio-card h3 { color: orange; margin-bottom: 10px; }
-
     /* DASHBOARD CHARTS */
     .dashboard { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 30px 0; }
     .chart { width: 350px; height: 220px; border-radius: 10px; border: 2px solid #30363d; background-size: cover; background-position: center; transition: transform 0.3s; }
     .chart:hover { transform: scale(1.05); border-color: orange; }
-
     /* DEPOSIT NOTICE */
     .notice-box { background: rgba(255, 165, 0, 0.1); border: 1px solid orange; padding: 20px; border-radius: 8px; max-width: 600px; margin: 20px auto; color: orange; font-weight: bold; line-height: 1.5; }
-
     /* INPUTS */
     input, textarea, select { width: 100%; max-width: 300px; padding: 12px; margin: 8px 0; border-radius: 5px; border: none; outline: none; color: #000; }
     textarea { height: 80px; }
-
     /* FOOTER */
     footer { background: black; padding: 20px; text-align: center; }
     .preview-img { width: 100%; margin-top: 10px; border-radius: 10px; display: none; border: 2px solid orange; }
@@ -98,9 +86,7 @@
     }
 </style>
 </head>
-
 <body>
-
 <nav>
     <div class="nav-brand">
         <img src="ST LOGO.png" alt="Logo">
@@ -118,7 +104,6 @@
         <a href="#contact" onclick="toggleMenu()">Contact</a>
     </div>
 </nav>
-
 <div class="hero">
     <div class="overlay">
         <h1>Samukelo Tech Solutions</h1>
@@ -126,13 +111,11 @@
         <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Your Website</button>
     </div>
 </div>
-
 <section id="about">
     <h2>About Us</h2>
     <p>At Samukelo Tech Solutions, we specialize in building modern, responsive websites that help businesses and individuals establish a powerful online presence. </p>
     <p>Beyond web development, we empower businesses through **Data Analysis and Business Intelligence (BI)**. We transform raw data into actionable insights using advanced tools like SQL and Power BI.</p>
 </section>
-
 <section id="portfolio" style="background: #090c10;">
     <h2>Our Previous Work</h2>
     <p>Projects successfully delivered for our clients.</p>
@@ -169,7 +152,6 @@
         </div>
     </div>
 </section>
-
 <section id="data-visuals">
     <h2>Data Analysis & BI Dashboards</h2>
     <p>Unlock insights with custom interactive reports.</p>
@@ -178,7 +160,6 @@
         <div class="chart" style="background-image: url('Patthebaker_Dashboard.png');"></div>
     </div>
 </section>
-
 <section id="pricing">
     <h2>Packages & Pricing</h2>
     
@@ -204,11 +185,11 @@
                 <li>E-commerce / Database</li>
                 <li>Custom Animations</li>
                 <li>Admin Dashboard</li>
+                <li>Social Media Manager (FB, TikTok, IG advertising)</li>
             </ul>
             <button class="btn" onclick="document.getElementById('order').scrollIntoView()">Order Site</button>
         </div>
     </div>
-
     <h3 style="color: orange; margin-top: 60px;">📊 Data Analysis & BI</h3>
     <div class="services">
     
@@ -236,7 +217,6 @@
         </div>
     </div>
 </section>
-
 <section id="order">
     <h2>Order Your Project</h2>
     
@@ -260,7 +240,6 @@
         <button type="submit" class="btn">Send Order</button>
     </form>
 </section>
-
 <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-info">
@@ -273,9 +252,7 @@
         <a href="https://tiktok.com/@samza771" target="_blank" style="color:white; font-size: 25px; margin: 10px;"><i class="fab fa-tiktok"></i></a>
     </div>
 </section>
-
 <footer><p>© 2026 Samukelo Tech Solutions</p></footer>
-
 <script>
 // Toggle Mobile Menu
 function toggleMenu() {
@@ -284,11 +261,9 @@ function toggleMenu() {
         navLinks.classList.toggle("active");
     }
 }
-
 let itemIndex = 0;
 let uploadedImages = {};
 const IMGBB_API_KEY = "e05a0a1fe3db90767929d029df02b9b7";
-
 function addItem() {
     let container = document.getElementById("itemsContainer");
     let div = document.createElement("div");
@@ -304,7 +279,6 @@ function addItem() {
     container.appendChild(div);
     itemIndex++;
 }
-
 async function uploadImage(event, index) {
     const file = event.target.files[0];
     const status = document.getElementById("status" + index);
@@ -324,9 +298,7 @@ async function uploadImage(event, index) {
         }
     } catch (e) { status.innerText = "❌ Error."; }
 }
-
 addItem();
-
 document.getElementById("orderForm").addEventListener("submit", function(e) {
     e.preventDefault();
     let msg = `👋 *NEW ORDER*\n*Name:* ${document.getElementById("name").value}\n*Business:* ${document.getElementById("business").value}\n*Package:* ${document.getElementById("package").value}\n\n*PROJECT DETAILS:*`;
