@@ -571,6 +571,7 @@
             border: none;
             outline: none;
             color: #000;
+            background: #fff;
             font-family: inherit;
         }
 
@@ -738,6 +739,85 @@
             }
         }
 
+
+        /* =====================================================
+           WHATSAPP BUTTONS + QUICK QUOTE (Growth Engine)
+        ====================================================== */
+
+        .wa-float {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 13px 18px;
+            border-radius: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s;
+        }
+
+        .wa-float i {
+            font-size: 26px;
+        }
+
+        .wa-float:hover,
+        .wa-float:focus {
+            transform: scale(1.05);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            margin-left: 8px;
+        }
+
+        .btn-wa:hover,
+        .btn-wa:focus {
+            background: #1ebe5a;
+        }
+
+        .quote-box {
+            max-width: 560px;
+            margin: 0 auto;
+            background: #161b22;
+            border: 1px solid orange;
+            border-radius: 12px;
+            padding: 25px 20px;
+        }
+
+        .quote-box form {
+            display: grid;
+            gap: 4px;
+            justify-items: center;
+        }
+
+        .gf-thanks {
+            color: #fff;
+            line-height: 1.9;
+        }
+
+        .gf-wa {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 20px;
+            border-radius: 25px;
+            background: #25D366;
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .wa-float span { display: none; }
+            .wa-float { padding: 14px; }
+            .btn-wa { margin-left: 0; }
+        }
+
     </style>
 </head>
 
@@ -791,6 +871,8 @@
 
         <a href="#locations" onclick="toggleMenu()">Areas</a>
 
+        <a href="#quote" onclick="toggleMenu()">Free Quote</a>
+
         <a href="#order" onclick="toggleMenu()">Order</a>
 
         <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -831,6 +913,15 @@
             aria-label="Order a website from Samukelo Tech Solutions"
         >
             Order Your Website
+        </a>
+
+        <a
+            href="https://wa.me/27637571971?text=Hi%20Samukelo%2C%20I%20saw%20your%20website%20and%20I%27m%20interested%20in%20a%20website%20for%20my%20business."
+            class="btn btn-wa"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
         </a>
 
     </div>
@@ -1628,6 +1719,52 @@
 
 
 <!-- =========================================================
+     QUICK QUOTE (saves to Growth Engine sheet + emails you)
+========================================================== -->
+
+<section id="quote">
+
+    <h2>Get a Free Quote</h2>
+
+    <p class="section-intro">
+        Not ready to order yet? Leave your details and we'll get back to you today.
+    </p>
+
+    <div class="quote-box">
+
+        <form
+            data-growth-form
+            data-whatsapp="27637571971"
+            data-thanks="Thank you! We've received your details and will contact you shortly."
+        >
+
+            <input name="name" placeholder="Your name" autocomplete="name" required>
+
+            <input name="phone" type="tel" placeholder="WhatsApp number" autocomplete="tel" required>
+
+            <input name="email" type="email" placeholder="Email (optional)" autocomplete="email">
+
+            <select name="service">
+                <option value="">What do you need?</option>
+                <option>Business Website - R399/Month</option>
+                <option>Advanced Website - R699/Month</option>
+                <option>Power BI Dashboard</option>
+                <option>Promo Video</option>
+                <option>Not sure yet</option>
+            </select>
+
+            <textarea name="message" placeholder="Tell us about your business (optional)"></textarea>
+
+            <button type="submit" class="btn">Get My Free Quote</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      FAQ
 ========================================================== -->
 
@@ -1817,6 +1954,22 @@
     </p>
 
 </footer>
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP BUTTON
+========================================================== -->
+
+<a
+    href="https://wa.me/27637571971?text=Hi%20Samukelo%2C%20I%20saw%20your%20website%20and%20I%27m%20interested%20in%20a%20website%20for%20my%20business."
+    class="wa-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Samukelo Tech Solutions on WhatsApp"
+>
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat with us</span>
+</a>
 
 
 <!-- =========================================================
